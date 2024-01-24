@@ -67,4 +67,15 @@ let dados2: Array<string> = ["Paulo", "Mylla", "Minie"];
 // No TS você pode declarar arrays de dois tipos (ou multi tipos)
 
 let infos: (string | number)[] = ["Paulo", 27, "Mylla", 24];
-// Mas é melhor criar um objeto tipado para receber mais de um tipo para não correr risco de dar algum erro
+// Mas é melhor criar um objeto tipado para receber mais de um tipo para não correr risco de dar algum erro e diferente da Tupla ele aceita dois valores independente da ordem
+
+// MÉTODOS PARA TRABALHAR COM ARRAYS (Os mesmos métodos do JS) = map()/pop()/Entre outros
+
+// Tuplas => Tupla é um vetor de multi tipos, porém tem um lugar certo para cada tipo declarado na criação da tupla:
+// Nesse exemplo a ordem tem que ser string - numero - numero, fora dessa ordem acusaria erro
+let boleto:[string, number, number] = ["conta agua", 186.90, 735612];
+
+// DATAS NO TS
+
+let aniversario:Date = new Date("2024-01-24 14:25");
+console.log(aniversario.toString());
