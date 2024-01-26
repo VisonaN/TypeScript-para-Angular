@@ -86,6 +86,24 @@ function addNumber(x:number,y:number):number{
     return x + y;
 }
 
+function addToHello(name:string):string{
+    return `Hello ${name}`;
+}
+
+// As funções no TS permitem você também declarar um OU nos tipos que você quer que retorne (number | string) e para o retorno quando vc tá fazendo uma função que vai retornar algo de um banco de dados você pode declarar tanto como :any quanto :number | string MAS É RECOMENDADO NÃO USAR ANY NO RETORNO, SEMPRE USAR OS TIPOS QUE VOCÊ ACHA MAIS PREVISÍVEIS QUE VÃO RETORNAR
+
+function CallToPhone(phone:number | string):any {
+    return phone;
+}
+
 let soma:number = addNumber(20,46);
 
-console.log(soma);
+//console.log(CallToPhone("(32)98451-1953"));
+
+// Funções assincronas (Sempre que usar o assync em uma função ela vai retornar uma Promise do tipo do valor que você quer retornar). Então quando você fizer uma função assincrona e declara o retorno o TS vai mostrar de forma implicita o tipo do retorno da promisse e ai vc declara o retorno da função de forma explícita pra um código melhor
+
+async function getDatabase(id:number):Promise<string>{
+    return "Paulo";
+}
+
+console.log(getDatabase(23));

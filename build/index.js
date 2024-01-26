@@ -16,6 +16,15 @@ printObjects({
 
 // Para executar o ts no node tem que colocar o comando no terminal: npx (node package exporter) e tsc (typescript compyler) e aí depois colcoar o src/index.ts para traduzir o que foi feito em TS para JS e aí sim pode executar o código
 */
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 /**
  * Variáveis
  */
@@ -58,5 +67,19 @@ let aniversario = new Date("2024-01-24 14:25");
 function addNumber(x, y) {
     return x + y;
 }
+function addToHello(name) {
+    return `Hello ${name}`;
+}
+// As funções no TS permitem você também declarar um OU nos tipos que você quer que retorne (number | string) e para o retorno quando vc tá fazendo uma função que vai retornar algo de um banco de dados você pode declarar tanto como :any quanto :number | string MAS É RECOMENDADO NÃO USAR ANY NO RETORNO, SEMPRE USAR OS TIPOS QUE VOCÊ ACHA MAIS PREVISÍVEIS QUE VÃO RETORNAR
+function CallToPhone(phone) {
+    return phone;
+}
 let soma = addNumber(20, 46);
-console.log(soma);
+//console.log(CallToPhone("(32)98451-1953"));
+// Funções assincronas (Sempre que usar o assync em uma função ela vai retornar uma Promise do tipo do valor que você quer retornar). Então quando você fizer uma função assincrona e declara o retorno o TS vai mostrar de forma implicita o tipo do retorno da promisse e ai vc declara o retorno da função de forma explícita pra um código melhor
+function getDatabase(id) {
+    return __awaiter(this, void 0, void 0, function* () {
+        return "Paulo";
+    });
+}
+console.log(getDatabase(23));
