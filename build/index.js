@@ -53,4 +53,10 @@ let infos = ["Paulo", 27, "Mylla", 24];
 let boleto = ["conta agua", 186.90, 735612];
 // DATAS NO TS
 let aniversario = new Date("2024-01-24 14:25");
-console.log(aniversario.toString());
+//console.log(aniversario.toString());
+// Funções => Mesma coisa do JS, só que os parâmetros da função são tipáveis e o retorno também, e quando você vai associar a função a uma variável você tem que tipar a variável de acordo com o tipo da função também para que ela seja aceita
+function addNumber(x, y) {
+    return x + y;
+}
+let soma = addNumber(20, 46);
+console.log(soma);
