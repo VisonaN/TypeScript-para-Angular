@@ -82,4 +82,31 @@ function getDatabase(id) {
         return "Paulo";
     });
 }
-console.log(getDatabase(23));
+const bot = {
+    id: 1,
+    name: "Megaman",
+};
+;
+const bot2 = {
+    id: 1,
+    name: "Megaman",
+};
+;
+const bot3 = {
+    id: "2",
+    name: "Éoq",
+    sayHello() {
+        return "Hello";
+    },
+};
+class Pessoa {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+    sayHello() {
+        return `Hello, i am ${this.name}`;
+    }
+}
+const p = new Pessoa(1, "Paulo");
+console.log(p.sayHello());

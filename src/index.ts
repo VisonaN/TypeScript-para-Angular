@@ -113,7 +113,7 @@ async function getDatabase(id:number):Promise<string>{
 // Type: Um tipo que é um objeto de agregados
 
 type robot = {
-    id: number;
+    readonly id: number;
     name: string;
 };
 
@@ -122,16 +122,49 @@ const bot: robot = {
     name: "Megaman",
 };
 
-// Interface: (Igual o type mas não recebe o simbolo de = )
+// Interface: (Igual o type mas não recebe o simbolo de = ) / Interfaces podem ser multi tipo
 
 interface robot2 {
-    id: number;
+    readonly id: number;
     name: string;
 };
 
 const bot2: robot2 = {
     id:1,
-    name: "Megaman"
+    name: "Megaman",
 };
 
 // Diferenças: Type é geralmente mais usado para tipar um objeto e Interface é mais utilizada quando vai trabalhar com class
+
+// Type e Interfaces podem ter uma propriedade de readonly (que faz com que não haja uma reatribuição de valor na propriedade depois de criada, ela fica como somente leitura)
+
+interface robot3 {
+    readonly id: number | string;
+    name: string;
+    sayHello():string;
+};
+
+const bot3: robot3 = {
+    id: "2",
+    name: "Éoq",
+    sayHello() {
+        return "Hello"
+    },
+};
+
+class Pessoa implements robot3{
+    id: string | number;
+    name: string;
+    
+    constructor(id: string | number, name: string){
+        this.id = id;
+        this.name = name;
+    }
+    sayHello(): string {
+        return `Hello, i am ${this.name}`;
+    }
+}
+
+const p = new Pessoa(1, "Paulo");
+
+console.log(p.sayHello());
