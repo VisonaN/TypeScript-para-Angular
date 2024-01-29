@@ -106,4 +106,32 @@ async function getDatabase(id:number):Promise<string>{
     return "Paulo";
 }
 
-console.log(getDatabase(23));
+//console.log(getDatabase(23));
+
+// INTERFACES (Parecidas com o type)
+
+// Type: Um tipo que é um objeto de agregados
+
+type robot = {
+    id: number;
+    name: string;
+};
+
+const bot: robot = {
+    id: 1,
+    name: "Megaman",
+};
+
+// Interface: (Igual o type mas não recebe o simbolo de = )
+
+interface robot2 {
+    id: number;
+    name: string;
+};
+
+const bot2: robot2 = {
+    id:1,
+    name: "Megaman"
+};
+
+// Diferenças: Type é geralmente mais usado para tipar um objeto e Interface é mais utilizada quando vai trabalhar com class
